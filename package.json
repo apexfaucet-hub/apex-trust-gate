@@ -1,6 +1,6 @@
 {
   "name": "@apexfaucet/trust-gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Zero-dependency drop-in ESM SDK & middleware for APEX Agent Firewall, Work Grader, Alita Quant Trade Edge, Launch Audit, and offline WebCrypto Ed25519 receipt verification.",
   "type": "module",
   "main": "./index.mjs",

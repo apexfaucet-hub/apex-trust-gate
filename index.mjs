@@ -104,6 +104,15 @@ export async function launchAudit(payload, opts = {}) {
   return await postApex('/api/x402/agent-launch-audit', payload, opts);
 }
 
+export async function veritasNotary(payload, opts = {}) {
+  const path = opts.freeDemo ? '/api/veritas/notarize-demo' : '/api/x402/veritas-notary';
+  return await postApex(path, payload, opts);
+}
+
+export async function agentCredit(payload, opts = {}) {
+  return await postApex('/api/x402/agent-credit', payload, opts);
+}
+
 export function wrapTool(toolFn, config = {}) {
   return async function guardedTool(args = {}) {
     const fw = await firewall({
