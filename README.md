@@ -6,6 +6,8 @@ Zero-dependency drop-in ESM SDK & middleware for the **APEX Agent Trust Stack** 
 - **`gradeWork()`** — Post-work escrow grader (`PASS_RELEASE` / `REVISE` / `REJECT_REFUND`) for ERC-8183 / G2 Jobs / MCP deliverables (`$0.004`/call, free 10/day demo at `https://apexfaucet.xyz/grade/`).
 - **`tradeEdge()`** — 5-exchange funding rate arbitrage, 10-chain rug/MEV shield, and Quarter-Kelly anti-tilt sizing (`$0.005`/call, free live radar at `https://apexfaucet.xyz/trade/`).
 - **`launchAudit()`** — 1-call production launch readiness audit + Ed25519 `LaunchReadinessCertificate` for any AI agent, MCP server, or x402 API (`$0.02`/call).
+- **`veritasNotary()`** — Hash-chained Ed25519 Proof-of-Execution Notary (`$0.01`/call, 10 free/day at `https://apexfaucet.xyz/veritas/`) linking multi-agent workflow steps with free public verification (`/api/veritas/verify/:hash`).
+- **`agentCredit()`** — Machine Credit Bureau (`$0.005`/call) returning a 300–950 Autonomous Credit Score and directly pluggable `agent-firewall` spend limits (`maxTxUsd`, `dailyCapUsd`, `humanApproveOverUsd`, `escrowCollateralPct`).
 - **`verifyReceipt()`** — Pure WebCrypto offline Ed25519 + RFC-8785 verification against `https://apexfaucet.xyz/.well-known/jwks.json` (works in Node 20+, Cloudflare Workers, Deno, Bun, browsers).
 - **`wrapTool()`** — 3-line middleware wrapping any MCP, LangGraph, or OpenAI Agents SDK tool with automatic pre-call firewall enforcement and optional post-call work grading.
 
