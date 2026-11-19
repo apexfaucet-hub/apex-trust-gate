@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
-import { verifyReceipt, wrapTool, FirewallBlockedError, rfc8785Stringify } from '../index.mjs';
+import { verifyReceipt, wrapTool, FirewallBlockedError, rfc8785Stringify, workCommons, workMint, agentMemory, deepResearch, agentSpotlight, aiInfraStatus, cryptoPulse } from '../index.mjs';
 
 function b64url(buf) {
   return Buffer.from(buf).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
@@ -38,4 +38,16 @@ test('wrapTool passes ALLOW and throws FirewallBlockedError on DENY', async () =
     fetch: async () => ({ ok: true, status: 200, json: async () => ({ ok: true, decision: 'DENY', reasons: ['cap_exceeded'] }) }),
   });
   await assert.rejects(() => denied({ amountUsd: 500 }), FirewallBlockedError);
+});
+
+test('v1.2.0 exports Synapse, Memory, Deep Research, Spotlight & Live Pulse helpers', async () => {
+  for (const fn of [workCommons, workMint, agentMemory, deepResearch, agentSpotlight, aiInfraStatus, cryptoPulse]) {
+    assert.equal(typeof fn, 'function');
+  }
+  const hit = await workCommons({ query: 'erc8183 escrow' }, {
+    verifyOffline: false,
+    fetch: async (url) => ({ ok: true, status: 200, json: async () => ({ ok: true, hit: true, url }) }),
+  });
+  assert.equal(hit.ok, true);
+  assert.equal(hit.hit, true);
 });

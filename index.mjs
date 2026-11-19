@@ -113,6 +113,38 @@ export async function agentCredit(payload, opts = {}) {
   return await postApex('/api/x402/agent-credit', payload, opts);
 }
 
+export async function workCommons(payload, opts = {}) {
+  const path = opts.freeDemo ? '/api/synapse/search-demo' : '/api/x402/work-commons';
+  return await postApex(path, payload, opts);
+}
+
+export async function workMint(payload, opts = {}) {
+  const path = opts.freeDemo ? '/api/synapse/mint-demo' : '/api/x402/work-mint';
+  return await postApex(path, payload, opts);
+}
+
+export async function agentMemory(payload, opts = {}) {
+  const path = opts.freeDemo ? '/api/memory/demo' : '/api/x402/agent-memory';
+  return await postApex(path, payload, opts);
+}
+
+export async function deepResearch(payload, opts = {}) {
+  const path = opts.freeDemo ? '/api/research/demo' : '/api/x402/deep-research';
+  return await postApex(path, payload, opts);
+}
+
+export async function agentSpotlight(payload, opts = {}) {
+  return await postApex('/api/x402/agent-spotlight', payload, opts);
+}
+
+export async function aiInfraStatus(payload = {}, opts = {}) {
+  return await postApex('/api/x402/ai-infra-status', payload, opts);
+}
+
+export async function cryptoPulse(payload = {}, opts = {}) {
+  return await postApex('/api/x402/crypto-pulse', payload, opts);
+}
+
 export function wrapTool(toolFn, config = {}) {
   return async function guardedTool(args = {}) {
     const fw = await firewall({
