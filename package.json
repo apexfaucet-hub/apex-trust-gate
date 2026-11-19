@@ -1,0 +1,40 @@
+{
+  "name": "@apexfaucet/trust-gate",
+  "version": "1.0.0",
+  "description": "Zero-dependency drop-in ESM SDK & middleware for APEX Agent Firewall, Work Grader, Alita Quant Trade Edge, Launch Audit, and offline WebCrypto Ed25519 receipt verification.",
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/trust-gate.test.mjs"
+  },
+  "keywords": [
+    "ai-agents",
+    "mcp",
+    "x402",
+    "agent-firewall",
+    "escrow",
+    "ed25519",
+    "jwks",
+    "guardrails",
+    "erc-8183",
+    "apexfaucet"
+  ],
+  "author": "APEX Faucet <https://apexfaucet.xyz>",
+  "license": "MIT",
+  "homepage": "https://apexfaucet.xyz/firewall/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apexfaucet-hub/apex-trust-gate.git"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
